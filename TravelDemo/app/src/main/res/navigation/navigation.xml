@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.traveldemo.FirstFragment"
+        android:label="首页"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.traveldemo.SecondFragment"
+        android:label="去旅行"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.traveldemo.ThirdFragment"
+        android:label="我的"
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/action_thirdFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/silde_to_top"
+            app:exitAnim="@anim/slide_from_buttom">
+            <argument
+                android:name="isVisable"
+                android:defaultValue="false" />
+        </action>
+        <argument
+            android:name="isVisable"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <action
+            android:id="@+id/action_thirdFragment_to_modfyFragment"
+            app:destination="@id/modfyFragment"
+            app:enterAnim="@anim/silde_to_top"
+            app:exitAnim="@anim/slide_from_buttom" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.traveldemo.LoginFragment"
+        android:label="登录"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment">
+            <argument
+                android:name="isVisable"
+                android:defaultValue="true" />
+        </action>
+        <argument
+            android:name="isVisable"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/modfyFragment"
+        android:name="com.example.traveldemo.ModfyFragment"
+        android:label="修改个人信息"
+        tools:layout="@layout/fragment_modfy">
+        <action
+            android:id="@+id/action_modfyFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+</navigation>
