@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/filter_price_desc"
+        android:title="@string/price_desc" />
+    <item
+        android:id="@+id/filter_price"
+        android:title="@string/filter_price" />
+    <item
+        android:id="@+id/filter_sale"
+        android:title="@string/filter_sale" />
+    <item
+        android:id="@+id/filter_mark"
+        android:title="@string/filter_mark" />
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+</menu>
